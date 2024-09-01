@@ -1,0 +1,28 @@
+
+def validation(test_str):
+    validity = "Valid"
+    n_uppercase = 0
+    n_digit = 0
+    for el in set(UId_test):
+        if el.isdigit():
+            n_digit += 1
+        if el.isupper():
+            n_uppercase += 1
+
+    if n_uppercase < 2 or n_digit < 3:
+        validity = "Invalid"
+    if len(set(UId_test)) != 10:
+        validity = "Invalid"
+    if UId_test.isalnum() == False:
+        validity = "Invalid"
+    return validity
+
+
+validations = []
+n_test = int(input())
+for _ in range(n_test):
+    UId_test = input().rstrip()
+    validations.append(validation(UId_test))
+
+for el in validations:
+    print(el)
