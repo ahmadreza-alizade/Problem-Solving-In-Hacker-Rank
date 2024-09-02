@@ -1,0 +1,33 @@
+import re
+
+
+def check_alternativness(postal_code):
+    regex_pattern = "([0-9])(?=[0-9]\1)"
+    check = re.findall(regex_pattern, postal_code)
+    if len(check) == 0:
+        return True
+    else:
+        return False
+
+def check_len(postal_code):
+    if len(list(postal_code)) == 6:
+        return True
+    else:
+        return False
+
+def validate_postal_code(postal_code):
+    regex_pattern = "^[1-9][0-9]{5}$"
+    check = re.findall(regex_pattern, postal_code)    
+    if len(check) == 1:
+        return True
+    else:
+        return False
+
+
+
+if __name__ == "__main__":
+    postal_code = input().rstrip()
+    if validate_postal_code(postal_code) and check_len(postal_code) and check_alternativness(postal_code):
+        print(True)
+    else:
+        print(False)
