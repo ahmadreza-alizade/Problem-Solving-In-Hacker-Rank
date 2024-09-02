@@ -1,0 +1,28 @@
+def check_same(string1, string2):
+    if string1 == string2:
+        return True
+    else:
+        return False
+
+
+def count_substring(string, sub_string):
+    counter = 0
+    index_end = len(sub_string)
+    index_start = 0
+    sub  = str()
+    while(index_end < len(string)+1):
+        if check_same(str(string[index_start:index_end]), sub_string):
+            counter += 1
+
+        index_end += 1
+        index_start += 1
+        
+        
+    return counter
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
