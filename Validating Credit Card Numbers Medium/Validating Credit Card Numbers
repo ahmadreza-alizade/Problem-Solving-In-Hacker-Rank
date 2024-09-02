@@ -1,0 +1,60 @@
+import re
+
+
+def no_repeat(credit_card):
+    credit_card = credit_card.replace('-', '')
+    cr_card = list(credit_card)
+    current = ''
+    repeat_counter = 1
+    for c in range(1, len(cr_card)):
+        current = cr_card[c]
+        if current == cr_card[c-1]:
+            repeat_counter += 1
+        else:
+            repeat_counter = 1
+        # print(repeat_counter)
+        if repeat_counter == 4:
+            return False
+    return True
+
+
+def hyphen_validation(credit_card):
+    new_credit_card = credit_card.split("-")
+    for item in new_credit_card:
+        if len(item) != 4:
+            return False
+    return True
+
+
+def numbers_validation(credit_card):
+    # credit_card = credit_card.replace('-', '')5
+    answr = re.findall("^[456]\d{3}-?\d{4}-?\d{4}-?\d{4}$", credit_card)
+    if len(answr) == 1 :
+        return True
+    return False
+
+
+validations = []
+n_test = int(input())
+for _ in range(n_test):
+    credit_card = input().rstrip()
+    validity = ""
+    if  "-" in credit_card:
+        if hyphen_validation(credit_card):
+            if numbers_validation(credit_card) and no_repeat(credit_card):
+                validity = "Valid"
+            else:
+                validity = "Invalid"
+        else:
+            validity = "Invalid"
+    else:
+        if numbers_validation(credit_card) and no_repeat(credit_card):
+            validity = "Valid"
+        else:
+            validity = "Invalid"
+    validations.append(validity)
+            
+
+
+for el in validations:
+    print(el)
