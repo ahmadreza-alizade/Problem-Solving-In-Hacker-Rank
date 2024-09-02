@@ -1,1 +1,1 @@
-# Problem-Solving-In-Hacker-Rank
+# Python-In-Hacker-Rank
