@@ -1,0 +1,21 @@
+
+
+if __name__ == "__main__":
+    
+    n_row, m_col = map(int, input().split())
+    
+    sigil = ".|."
+    dash = "-"
+    welecome = "WELCOME".center(m_col, "-")
+    
+    for col in range(n_row//2):
+        line = (col*sigil) + sigil + (col*sigil)
+        line = line.center(m_col, "-")
+        print(line)
+        
+    print(welecome)
+        
+    for col in reversed(range(n_row//2)):
+        line = (col*sigil) + sigil + (col*sigil)
+        line = line.center(m_col, "-")
+        print(line)        
