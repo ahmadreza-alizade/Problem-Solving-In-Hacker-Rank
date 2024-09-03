@@ -1,0 +1,48 @@
+
+
+def alphanumeric_characters(string):
+    list_string = list(string)
+    for el in list_string:
+        if el.isalnum():
+            return True
+    return False
+
+
+def alphabetical_characters(string):
+    list_string = list(string)
+    for el in list_string:
+        if el.isalpha():
+            return True
+    return False
+
+    
+
+def any_digits(string):
+    list_string = list(string)
+    for el in list_string:
+        if el.isdigit():
+            return True
+    return False
+
+def lowercase_characters(string):
+    list_string = list(string)
+    for el in list_string:
+        if el.islower():
+            return True
+    return False
+            
+def uppercase_characters(string):
+    list_string = list(string)
+    for el in list_string:
+        if el.isupper():
+            return True
+    return False
+
+
+if __name__ == '__main__':
+    s_string = input()
+    print(alphanumeric_characters(s_string))
+    print(alphabetical_characters(s_string))
+    print(any_digits(s_string))
+    print(lowercase_characters(s_string))
+    print(uppercase_characters(s_string))
