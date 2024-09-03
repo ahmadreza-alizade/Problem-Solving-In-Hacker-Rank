@@ -1,7 +1,4 @@
-
-def capitalize(name):
-    return name.capitalize()
-
 if __name__ == "__main__":
-    first_name, last_name = map(capitalize, input().split())
-    print(" ".join([first_name, last_name]))
+    s = input
+    line = ' '.join([i.capitalize() for i in s.split(" ")])
+    print(line)
