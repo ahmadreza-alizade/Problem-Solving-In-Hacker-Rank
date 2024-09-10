@@ -1,0 +1,23 @@
+from itertools import product
+from collections import Counter
+
+if __name__ == "__main__":
+    s_input = input()
+    occurrence_count = Counter(s_input).most_common()
+    occurrence_count.sort(key=lambda tup: (-tup[1], tup[0]))
+
+    counter = 0
+    for key, value in occurrence_count:
+        if counter < 3:
+            print(key, value)
+            counter += 1
+        else:
+            break
+
+    # for key in occurrence_count:
+    #     print(key, occurrence_count[key])
+
+    # for i in range(0, len(set(s_input))):
+    #     print(occurrence_count[s_input[i]])
+
+    # print(occurrence_count[s_input[1]])
