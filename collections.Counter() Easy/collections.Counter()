@@ -1,0 +1,15 @@
+from collections import Counter, deque
+
+if __name__ == '__main__':
+    shoes_number = int(input())
+    shoes_size = Counter(list(map(int, input().split())))
+    customers_number = int(input())
+
+    desired_shoes = deque()
+    total_price = 0
+    for _ in range(0, customers_number):
+        size, price = map(int, input().split())
+        if size in shoes_size and shoes_size[size] > 0:
+            total_price += price
+            shoes_size[size] -= 1
+    print(total_price)
