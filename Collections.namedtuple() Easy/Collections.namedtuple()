@@ -1,0 +1,15 @@
+from collections import namedtuple
+
+if __name__ == "__main__":
+    stu_number = int(input())
+    cols = [item.upper() for item in input().split(' ') if item.strip()]
+
+    data = namedtuple("student", " ".join(cols))
+    total_sum = 0
+    for _ in range(0, stu_number):
+        raw_string = [item.upper()
+                      for item in input().split(' ') if item.strip()]
+        stu_info = data(*raw_string)
+        total_sum += int(stu_info.MARKS)
+
+    print(f'{(total_sum/stu_number):.2f}')
