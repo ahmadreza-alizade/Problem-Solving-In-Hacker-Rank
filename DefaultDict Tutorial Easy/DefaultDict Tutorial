@@ -1,0 +1,36 @@
+from collections import defaultdict
+
+if __name__ == '__main__':
+    a_group, b_group = map(int, input().split())
+    a_list = []
+    b_list = []
+    for _ in range(a_group):
+        a_list.append(input())
+    for _ in range(b_group):
+        b_list.append(input())
+
+    my_defaultdict = defaultdict(list)
+
+    for i, x in enumerate(a_list):
+        my_defaultdict[x].append(i+1)
+
+    for el in b_list:
+        if el in my_defaultdict:
+            print(" ".join(map(str, my_defaultdict[el])))
+        else:
+            print(-1)
+
+# from collections import defaultdict
+# if __name__ == '__main__':
+#     n, m = map(int, input().split())
+#     A = [input() for x in range(n)]
+#     B = [input() for x in range(m)]
+#     ID = defaultdict(list)
+
+    # for i, x in enumerate(A):
+    #     ID[x].append(i+1)
+#     for x in B:
+#         if x in ID:
+#             print(' '.join(map(str, ID[x])))
+#         else:
+#             print(-1)
