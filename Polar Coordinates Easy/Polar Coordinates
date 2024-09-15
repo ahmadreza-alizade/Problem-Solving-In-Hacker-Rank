@@ -1,0 +1,5 @@
+from cmath import phase
+if __name__ == "__main__":
+    complex_num = input().strip()
+    print(f'{abs(complex(complex_num)):.3f}')
+    print(f'{phase(complex(complex_num)):.3f}')
