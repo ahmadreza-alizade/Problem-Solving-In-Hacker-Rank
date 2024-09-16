@@ -1,0 +1,17 @@
+def average(array):
+
+    len_heights = len(set(array))
+    sum = 0
+    for el in set(array):
+        sum += el
+
+    avg = sum / len_heights
+
+    return f'{avg:.3f}'
+
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
