@@ -1,0 +1,14 @@
+if __name__ == "__main__":
+    a_len = int(input())
+    a_set = set(map(int, input().split()))
+
+    b_len = int(input())
+    b_set = set(map(int, input().split()))
+
+    a_diff_list = list(a_set.difference(b_set))
+    b_diff_list = list(b_set.difference(a_set))
+    diff_list = [*a_diff_list, *b_diff_list]
+
+    diff_list.sort()
+    for diff in diff_list:
+        print(diff)
