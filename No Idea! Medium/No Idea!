@@ -1,6 +1,8 @@
 if __name__ == "__main__":
     array_num, sets_num = input().split()
     array = input().split()
+
+    # sets are more optimize than lists
     a_set = set(input().split())
     b_set = set(input().split())
         
