@@ -1,0 +1,13 @@
+if __name__ == "__main__":
+    array_num, sets_num = input().split()
+    array = input().split()
+    a_set = set(input().split())
+    b_set = set(input().split())
+        
+    happiness = 0
+    for arg in array:
+        if arg in a_set:
+            happiness += 1
+        if arg in b_set:
+            happiness += -1
+    print(happiness)
