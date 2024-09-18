@@ -1,0 +1,12 @@
+import calendar
+
+if __name__ == "__main__":
+    date_input = list(map(int, input().split()))
+    day = calendar.weekday(date_input[2], date_input[0], date_input[1])
+    week = ["MONDAY", "TUESDAY", "WEDNESDAY",
+            "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
+    week = list(enumerate(week))
+    for d in week:
+        if d[0] == day:
+            print(d[1])
+            break
