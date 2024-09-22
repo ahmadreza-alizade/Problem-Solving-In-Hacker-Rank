@@ -1,4 +1,9 @@
 In any right triangle, the distance from the right angle (vertex B) to the midpoint M of the hypotenuse is equal to half the length of the hypotenuse AC. Mathematically:
 𝐵𝑀 = (1/2)𝐴𝐶
 
-
+import math
+AB = int(input())
+BC = int(input())
+MBCradian = math.atan(AB/BC)
+MBCdegree = math.degrees(MBCradian)
+print(f"{MBCdegree:.0f}\u00b0")
