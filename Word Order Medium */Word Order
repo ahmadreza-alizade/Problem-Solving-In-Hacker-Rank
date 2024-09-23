@@ -1,0 +1,18 @@
+from collections import OrderedDict
+
+if __name__ == '__main__':
+    n = int(input())
+    my_OD = OrderedDict()
+
+    for i in range(0, n):
+        key = input()
+        if key in my_OD:
+            my_OD[key] += 1
+        else:
+            my_OD[key] = 1
+
+    print(len(my_OD))
+    appearance = []
+    for item_name in my_OD:
+        appearance.append(str(my_OD[item_name]))
+    print(" ".join(appearance))
