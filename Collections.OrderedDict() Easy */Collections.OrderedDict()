@@ -1,0 +1,15 @@
+from collections import OrderedDict
+
+if __name__ == '__main__':
+    n = int(input())
+    my_OD = OrderedDict()
+
+    for i in range(0, n):
+        key, value = input().rsplit(' ', 1)
+        if key in my_OD:
+            my_OD[key] += int(value)
+        else:
+            my_OD[key] = int(value)
+
+    for item_name in my_OD:
+        print(item_name + " " + str(my_OD[item_name]))
