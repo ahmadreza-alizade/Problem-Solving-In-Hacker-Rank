@@ -1,0 +1,50 @@
+from collections import deque
+
+
+def pop(my_deque, num=None):
+    my_deque.pop()
+
+
+def popleft(my_deque, num=None):
+    my_deque.popleft()
+
+
+def append(my_deque, num=None):
+    my_deque.append(num)
+
+
+def appendleft(my_deque, num=None):
+    my_deque.appendleft(num)
+
+
+def do_operation(callback, my_deque, num=None):
+    callback(my_deque, num)
+
+
+if __name__ == '__main__':
+    # n = int(input())
+    num_of_operation = int(input())
+    elements = deque()
+
+    operations = deque()
+    for i in range(0, num_of_operation):
+        args = input().split()
+        if len(args) == 2:
+            args[1] = int(args[1])
+        operations.append(args)
+
+    operation_map = {
+        'pop': pop,
+        'popleft': popleft,
+        'append': append,
+        'appendleft': appendleft,
+    }
+
+    for el in operations:
+        if len(el) == 2:
+            do_operation(operation_map[el[0]], elements, el[1])
+        else:
+            do_operation(operation_map[el[0]], elements)
+
+    elements = deque(map(str, elements))
+    print(" ".join(elements))
