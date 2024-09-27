@@ -1,0 +1,8 @@
+if __name__ == "__main__":
+    En_num = int(input())
+    En_set = set(map(int, input().split()))
+   
+    Fr_num = int(input())
+    Fr_set = set(map(int, input().split()))
+
+    print(len(En_set.symmetric_difference(Fr_set)))
