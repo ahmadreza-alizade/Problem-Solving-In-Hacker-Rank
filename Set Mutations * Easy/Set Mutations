@@ -1,0 +1,41 @@
+
+def intersection_update(A_set, B_set):
+    A_set.intersection_update(B_set)
+    return A_set
+
+
+def update(A_set, B_set):
+    A_set.update(B_set)
+    return A_set
+
+
+def symmetric_difference_update(A_set, B_set):
+    A_set.symmetric_difference_update(B_set)
+    return A_set
+
+
+def difference_update(A_set, B_set):
+    A_set.difference_update(B_set)
+    return A_set
+
+
+operations = {
+    'intersection_update': intersection_update,
+    'update': update,
+    'symmetric_difference_update': symmetric_difference_update,
+    'difference_update': difference_update
+}
+
+
+if __name__ == "__main__":
+    set_num = int(input())
+    A_set = set(map(int, input().split()))
+
+    operation_num = int(input())
+    
+    for _ in range(operation_num):
+        operation_test = input().split()[0]
+        B_set = set(map(int, input().split()))
+        A_set = operations[operation_test](A_set, B_set)
+        
+    print(sum(A_set))
