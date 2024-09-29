@@ -1,0 +1,33 @@
+from collections import deque
+
+
+def stack_possibility(cubes):
+    
+    left_most = cubes.popleft()
+    right_most = cubes.pop()
+    
+    while(len(cubes) > 0):
+        if len(cubes) > 0 and cubes[0] <= left_most:
+            left_most = cubes.popleft()
+        elif len(cubes) > 0 and cubes[-1] <= right_most:
+            right_most = cubes.pop()
+        else:
+            break
+    
+    if len(cubes) == 0:
+        return ("Yes")
+    else:
+        return ("No")
+
+
+if __name__ == "__main__":
+    case_num = int(input())
+
+    result = deque()
+
+    for _ in range(0, case_num):
+        cube_num = int(input())
+        result.append(stack_possibility(deque(map(int, input().split()))))
+
+    for el in result:
+        print(el)
