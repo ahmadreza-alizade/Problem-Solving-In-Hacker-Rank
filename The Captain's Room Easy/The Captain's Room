@@ -1,0 +1,12 @@
+from collections import Counter
+
+if __name__ == "__main__":
+    gp_num = int(input())
+
+    rooms = Counter(list(map(int, input().split())))
+
+    for key, value in rooms.items():
+        if value == 1:
+            result = key
+
+    print(result)
