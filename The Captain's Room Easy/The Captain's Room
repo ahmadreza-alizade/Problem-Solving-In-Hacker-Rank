@@ -10,3 +10,12 @@ if __name__ == "__main__":
             result = key
 
     print(result)
+
+
+# second way ==> in mathematical way
+# K = int(input())
+# room_nums = list(map(int, input().split()))
+
+# captain_room = (K * sum(set(room_nums)) - sum(room_nums)) // (K - 1)
+
+# print(captain_room)
