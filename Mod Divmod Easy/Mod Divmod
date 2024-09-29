@@ -1,0 +1,14 @@
+if __name__ == "__main__":
+    a_num = int(input())
+    b_num = int(input())
+    
+    division = a_num // b_num
+    mode = a_num % b_num
+    
+    result = divmod(a_num, b_num)
+    
+    print(division)
+    print(mode)
+    print(result)
+    
+    
