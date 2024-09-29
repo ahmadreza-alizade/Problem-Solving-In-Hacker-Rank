@@ -1,0 +1,11 @@
+from math import pow
+if __name__ == "__main__":
+    a_num = int(input())
+    b_num = int(input())
+    m_num = int(input())
+
+    power_result = pow(a_num, b_num)
+    mode_result = power_result % m_num
+
+    print(int(power_result))
+    print(int(mode_result))
