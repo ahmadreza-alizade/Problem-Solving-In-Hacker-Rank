@@ -1,0 +1,11 @@
+from math import pow
+if __name__ == "__main__":
+    a_num = int(input())
+    b_num = int(input())
+    c_num = int(input())
+    d_num = int(input())
+
+    power_ab = a_num ** b_num
+    power_cd = c_num ** d_num
+
+    print(int(power_ab) + int(power_cd))
