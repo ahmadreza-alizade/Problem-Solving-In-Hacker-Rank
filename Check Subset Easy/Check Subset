@@ -1,0 +1,22 @@
+from collections import deque
+
+
+def subset_check(A_set, B_set):
+    res = A_set.issubset(B_set)
+    return (res)
+
+
+if __name__ == "__main__":
+    test_num = int(input())
+    result = deque()
+
+    for _ in range(test_num):
+        A_len = int(input())
+        A_set = set(map(int, input().split()))
+        B_len = int(input())
+        B_set = set(map(int, input().split()))
+
+        result.append(subset_check(A_set, B_set))
+
+    for case in result:
+        print(case)
